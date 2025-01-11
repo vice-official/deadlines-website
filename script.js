@@ -53,31 +53,29 @@ const addTask = () => {
             }
             const taskSpan = targetElement.previousElementSibling;
 
-            
             const editInput = document.createElement('input');
             editInput.type = 'text';
             editInput.value = taskSpan.innerText;
-            
-           
+
+            // Установите белый фон и белую рамку
             editInput.style.width = '100%';
-            editInput.style.backgroundColor = '#232936';
-            editInput.style.color = '#ffffff'; 
-            editInput.style.border = 'none'; 
+            editInput.style.backgroundColor = '#ffffff'; // Белый фон
+            editInput.style.color = '#232936'; 
+            editInput.style.border = '2px solid #ffffff'; // Белая рамка
             editInput.style.padding = '0.8em 1em'; 
             editInput.style.borderRadius = '0.5em'; 
             editInput.style.fontFamily = 'Poppins, sans-serif';
             editInput.style.fontSize = '15px';
+            editInput.style.outline = 'none'; // Убирает стандартную рамку при фокусе
 
             targetElement.parentNode.insertBefore(editInput, targetElement); 
             targetElement.parentNode.removeChild(taskSpan); 
 
-            
             const saveChanges = () => {
                 if (editInput.value.trim()) {
                     taskSpan.innerText = editInput.value; 
                     targetElement.parentNode.insertBefore(taskSpan, targetElement); 
                 } else {
-                    
                     targetElement.parentNode.remove();
                     taskCount -= 1;
                 }
@@ -86,7 +84,6 @@ const addTask = () => {
             };
 
             editInput.addEventListener('blur', saveChanges);
-
             
             editInput.addEventListener('keydown', (event) => {
                 if (event.key === "Enter") {
@@ -113,7 +110,6 @@ const addTask = () => {
     displayCount(taskCount);
     newTaskInput.value = "";
 };
-
 
 newTaskInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
