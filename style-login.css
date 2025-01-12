@@ -36,7 +36,7 @@ body {
 
 .form .input-box {
     width: 100%;
-    margin-top: 20px;    
+    margin-top: 20px;
 }
 
 .input-box label {
@@ -60,12 +60,12 @@ body {
 }
 
 .eye-icon {
-    position: absolute; 
+    position: absolute; /* Позиционирование изображения */
     right: 15px; /* Отступ от правого края */
-    top: 50%; 
-    transform: translateY(-50%); 
-    width: 30px; 
-    cursor: pointer; 
+    top: 50%; /* Центрирование по вертикали */
+    transform: translateY(-50%); /* Центрирование по вертикали */
+    width: 30px; /* Ширина изображения */
+    cursor: pointer; /* Курсор при наведении */
 }
 
 .form button {
