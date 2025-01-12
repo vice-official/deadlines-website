@@ -10,14 +10,6 @@
 
 }
 
-/* .darkmode {
-  --background: #ffffff;
-   --text: #232936;
-   --base-variant: #101425;
-   --primary-color: #3a435d;
-   
-} */
-
 
 
 
@@ -63,7 +55,7 @@ body {
   width: 100%;
   font-family: "Poppins", sans-serif;
   background-color: #fff;
-  color:#232936;
+  color: #232936;
   font-size: 0.9em;
   border: none;
   border-bottom: 2px solid var(--fi) ;
@@ -193,18 +185,23 @@ body {
   right: 20px;
 }
 
-/* #theme-switch svg{
-  fill: var(--primary-color);
+.container {
+  position: relative;
 }
 
-#theme-switch svg:last-child {
-  display: none;
+#profile {
+  text-align: right;
+  margin-bottom: 20px;
+
 }
 
-.darkmode #theme-switch svg:first-child {
-  display: none;
+#profile img  {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 10px;
+  
 }
 
-.darkmode #theme-switch svg:last-child {
-  display: block;
-} */
+img {
+  filter: brightness(1) saturate(100%) invert(30%);
+}

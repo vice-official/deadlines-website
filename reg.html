@@ -15,38 +15,46 @@
     <link rel="stylesheet" href="style-reg.css" />
 </head>
 <body>
-    <section class="container">
-        <header>Registration form</header>
-        <form action="#" class="form">
-            <div class="input-box">
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter your name"> 
-            </div>
 
-            <div class="input-box">
-                <label>Email Address</label>
-                <input type="text" placeholder="Enter your email address">
-            </div>
-
-            <div class="input-box">
-                <label>Password</label>
-                <div class="password-container">
-                    <input type="password" placeholder="Enter your password" id="password">
-                    <img src="eye-close.png" class="eye-icon" id="eyeicon" alt="Toggle password visibility">
+    <div class = "app">
+        <section class="container">
+            <header>Registration form</header>
+            <form action="#" class="form" id="registration-form">
+                <div class="input-box">
+                    <label>Full Name</label>
+                    <input type="text" placeholder="Enter your name" id="full-name"> 
                 </div>
-            </div>
-            
 
-            <button>Submit</button>
+                <div class="input-box">
+                    <label>Email Address</label>
+                    <input type="text" placeholder="Enter your email address" id="email">
+                </div>
 
-            <a href="login.html">Already have an account? Log in</a>
-        </form> 
-    </section>
+                <div class="input-box">
+                    <label>Password</label>
+                    <div class="password-container">
+                        <input type="password" placeholder="Enter your password" id="password">
+                        <img src="eye-close.png" class="eye-icon" id="eyeicon" alt="Toggle password visibility">
+                    </div>
+                </div>
+                
+                <button type="submit">Submit</button>
 
+                <a href="login.html">Already have an account? Log in</a>
+            </form> 
+        </section>
+
+        <p id="error">Input cannot be empty!</p>
+
+    </div>
     
     <script>
         let eyeicon = document.getElementById("eyeicon");
         let password = document.getElementById("password");
+        let fullName = document.getElementById("full-name");
+        let email = document.getElementById("email");
+        let errorMessage = document.getElementById("error");
+        let registrationForm = document.getElementById("registration-form");
 
         eyeicon.onclick = function() {
             if (password.type === "password") {
@@ -55,6 +63,21 @@
             } else {
                 password.type = "password"; 
                 eyeicon.src = "eye-close.png"; 
+            }
+        }
+
+        registrationForm.onsubmit = function(event) {
+            event.preventDefault();
+            
+            
+            errorMessage.style.display = "none";
+
+            
+            if (fullName.value.trim() === "" || email.value.trim() === "" || password.value.trim() === "") {
+                errorMessage.style.display = "block"; 
+            } else {
+                
+                window.location.href = "index.html";
             }
         }
     </script>

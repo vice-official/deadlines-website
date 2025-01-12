@@ -44,24 +44,24 @@ body {
 }
 
 .password-container {
-    position: relative; /* Позволяет позиционировать дочерние элементы */
+    position: relative;
 }
 
 .form .input-box input {
     height: 50px;
-    width: 100%; /* Использует полную ширину контейнера */
+    width: 100%;
     outline: none;
     font-size: 1rem;
-    color: #707070;
+    color: #232936;
     margin-top: 8px;
     border: 1px solid #ddd;
     border-radius: 6px;
-    padding: 0 45px; /* Добавлено дополнительное внутреннее поле справа для иконки */
+    padding: 0 45px;
 }
 
 .eye-icon {
     position: absolute; 
-    right: 15px; /* Отступ от правого края */
+    right: 15px;
     top: 50%; 
     transform: translateY(-50%); 
     width: 30px; 
@@ -93,6 +93,16 @@ body {
     margin-top: 15px; 
     text-align: center; 
  }
+
+#error {
+    text-align: center;
+    display: none;
+    background-color: #ffffff;
+    color: #ff5c5c;
+    margin-top: 1.5em;
+    padding: 1em 0;
+    border-radius: 0.5em;
+}
 
 @media screen and (max-width: 500px) {
    .form .column {
